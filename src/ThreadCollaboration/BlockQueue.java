@@ -1,8 +1,6 @@
 package ThreadCollaboration;
 
 import java.util.Random;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
@@ -229,17 +227,33 @@ class Merger implements Runnable {
 
 public class BlockQueue {
 	public static void main(String[] args) throws Exception {
-		ToastQueue dryQueue = new ToastQueue(), butteredQueue = new ToastQueue(), toBeButteredQueue = new ToastQueue(), jammedQueue = new ToastQueue(), toBeJammedQueue = new ToastQueue(), finishedQueue = new ToastQueue();
-		ExecutorService exec = Executors.newCachedThreadPool();
-		exec.execute(new Toaster(dryQueue));
-		exec.execute(new Alternator(dryQueue, toBeButteredQueue,
-				toBeJammedQueue));
-		exec.execute(new Butterer(toBeButteredQueue, butteredQueue));
-		exec.execute(new Jammer(toBeJammedQueue, jammedQueue));
-		exec.execute(new Merger(butteredQueue, jammedQueue, toBeButteredQueue,
-				toBeJammedQueue, finishedQueue));
-		exec.execute(new Eater(finishedQueue));
-		TimeUnit.SECONDS.sleep(5);
-		exec.shutdownNow();
+/*		Set<String> set = new HashSet<>();
+		set.add("1");
+		set.add("2");
+		
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("1", 1);
+		map.put("2", 2);
+		for (Iterator<String> iterator = map.keySet().iterator(); iterator
+				.hasNext();) {
+			String string = iterator.next();
+			System.out.println(string);
+		}*/
+		// ToastQueue dryQueue = new ToastQueue(), butteredQueue = new
+		// ToastQueue(), toBeButteredQueue = new ToastQueue(), jammedQueue = new
+		// ToastQueue(), toBeJammedQueue = new ToastQueue(), finishedQueue = new
+		// ToastQueue();
+		// ExecutorService exec = Executors.newCachedThreadPool();
+		// exec.execute(new Toaster(dryQueue));
+		// exec.execute(new Alternator(dryQueue, toBeButteredQueue,
+		// toBeJammedQueue));
+		// exec.execute(new Butterer(toBeButteredQueue, butteredQueue));
+		// exec.execute(new Jammer(toBeJammedQueue, jammedQueue));
+		// exec.execute(new Merger(butteredQueue, jammedQueue,
+		// toBeButteredQueue,
+		// toBeJammedQueue, finishedQueue));
+		// exec.execute(new Eater(finishedQueue));
+		// TimeUnit.SECONDS.sleep(5);
+		// exec.shutdownNow();
 	}
 } /* (Execute to see output) */// :~
